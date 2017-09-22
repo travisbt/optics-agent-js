@@ -95,9 +95,12 @@ const retryRequest = (options, callback) => {
           delayMs *= 2;
           request(options, wrapper);
         }, delayMs);
+      } else {
+        callback(err, res, body);
       }
+    } else {
+      callback(err, res, body);
     }
-    callback(err, res, body);
   };
   return request(options, wrapper);
 };
