@@ -33,19 +33,19 @@ Next, set up the agent in your main server file.
 
 ### Import the package
 
-```
+```js
 var OpticsAgent = require('optics-agent');
 ```
 
 or in ES2015+
 
-```
+```js
 import OpticsAgent from 'optics-agent';
 ```
 
 ### [optional] Configure the Agent
 
-```
+```js
 OpticsAgent.configureAgent({ configOptions })
 ```
 
@@ -76,7 +76,7 @@ Options include:
 
 Call `instrumentSchema` on the same [executable schema object](http://graphql.org/graphql-js/type/#graphqlschema) you pass to the [`graphql` function from `graphql-js`](http://graphql.org/graphql-js/graphql/#graphql):
 
-```
+```js
 OpticsAgent.instrumentSchema(executableSchema);
 ```
 
@@ -90,7 +90,7 @@ Set up middleware:
 
 Tell your server to run the Optics Agent middleware:
 
-```
+```js
 expressServer.use(OpticsAgent.middleware());
 ```
 
@@ -98,7 +98,7 @@ This must run before the handler that actually executes your GraphQL queries.  F
 
 #### HAPI
 
-```
+```js
 OpticsAgent.instrumentHapiServer(hapiServer);
 ```
 
@@ -129,7 +129,7 @@ router.post(
 Inside your request handler, if you are calling `graphql` directly, add a new
 field to the `context` object sent to `graphql`:
 
-```
+```jsjs
 { opticsContext: OpticsAgent.context(req) }
 ```
 
@@ -138,7 +138,7 @@ the
 [`context` object on the `ApolloOptions` value that you return](http://dev.apollodata.com/tools/apollo-server/setup.html#options-function).
 
 If you are using HAPI you must explicitly use the raw request object:
-```
+```js
 { opticsContext: OpticsAgent.context(request.raw.req) }
 ```
 
@@ -199,7 +199,7 @@ index 98df047..b110fac 100644
 
 If you need to have more than one Agent per process, you can manually construct an Agent object instead of using the default global Agent. Call `new OpticsAgent.Agent(options)` to instantiate the object, and then call methods directly on the object instead of on `OpticsAgent`. Here is an example:
 
-```
+```js
 var OpticsAgent = require('optics-agent');
 var agent = new OpticsAgent.Agent({ apiKey: '1234' });
 agent.instrumentSchema(schema);
