@@ -1,5 +1,8 @@
 # Change log
 
+### 1.1.7
+* Fixed an issue where request retries would print superfluous errors to the console.
+
 ### 1.1.4
 * Community support for koa2, thanks to tychota and sibelius
 * Ugprade to graphql-tools 1.x
