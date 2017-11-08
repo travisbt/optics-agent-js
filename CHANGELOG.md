@@ -1,5 +1,11 @@
 # Change log
 
+### 1.1.9
+* Allow using graphql-tools 2
+
+### 1.1.8
+* Allow using graphql 0.11.x
+
 ### 1.1.7
 * Fixed an issue where request retries would print superfluous errors to the console.
 
