@@ -1,3 +1,5 @@
+> Update: There is a new version of Optics! [Apollo Engine](https://www.apollographql.com/) has all the features Optics does plus error tracking, query caching, improved tracing, and more. Engine has different requirements setup from Optics and in order use Engine you need to run the Engine Proxy, which can be easily done via the new [Engine NPM Package](https://github.com/apollographql/apollo-engine-js). Already using Optics? Check out the [migration guide](https://www.apollographql.com/docs/engine/upgrade-optics.html) for switching to Engine. Optics will continue to be available through early 2018.
+
 # optics-agent-js
 Apollo Optics agent for GraphQL-js
 
